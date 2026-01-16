@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TypeDash - Professional Typing Practice</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header>
+            <h1>TypeDash</h1>
+            <p>Master your typing skills</p>
+        </header>
+
+        <div class="game-card">
+            <span class="level-badge" id="level-display">Level 1</span>
+            <!-- Manual Level Control -->
+            <button id="next-level-btn" class="level-btn">Next
+                Level &rarr;</button>
+
+            <button id="sound-toggle-btn" class="level-btn"
+                style="position: absolute; top: -10px; left: 20px; background: rgba(30, 41, 59, 0.8); color: #94a3b8; padding: 0.5rem 1rem; border: 1px solid rgba(255,255,255,0.1); border-radius: 99px; font-weight: 600; cursor: pointer;">
+                No Sound 🔇
+            </button>
+
+            <div class="stats-bar">
+                <div class="stat-item">
+                    <span class="stat-label">Word Timer</span>
+                    <span class="stat-value" id="time-left">30s</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Score</span>
+                    <span class="stat-value" id="score">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">WPM</span>
+                    <span class="stat-value" id="wpm">0</span>
+                </div>
+            </div>
+
+            <div class="word-display" id="current-word">
+                <!-- Word letters will be injected here -->
+                Ready?
+            </div>
+
+            <div class="input-area">
+                <input type="text" id="word-input" placeholder="Type here..." autocomplete="off">
+            </div>
+
+            <div class="message" id="message"></div>
+        </div>
+    </div>
+
+    <!-- Start/Game Over Overlay -->
+    <div class="overlay" id="modal-overlay">
+        <div class="modal">
+            <h2 id="modal-title">Welcome</h2>
+            <p id="modal-desc">Type the word before the timer runs out!</p>
+            <div id="final-stats" style="display: none; margin-bottom: 20px;">
+                <p>Score: <span id="final-score">0</span></p>
+                <p>WPM: <span id="final-wpm">0</span></p>
+                <p>Level Reached: <span id="final-level">1</span></p>
+            </div>
+            <button class="btn" id="start-btn">Start Game</button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <!-- Load words first so they are available -->
+    <script src="words.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
